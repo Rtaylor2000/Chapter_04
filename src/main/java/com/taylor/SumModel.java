@@ -5,23 +5,50 @@
  */
 package com.taylor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  *
  * @author Ryan
  */
-public class SumModel {
-    private String errorFirstNumber = "";
-    private String errorSecoundNumber = "";
-    public String giveAnswer(String numberOne, String numberTwo){
+public class SumModel implements Serializable{
+    private String errorFirstNumber;
+    private String errorSecoundNumber;
+    private String answer;
+    
+    public SumModel() {
+        answer= "";
+        errorSecoundNumber = "";
+        errorFirstNumber = "";
+    }
+
+    public String getErrorFirstNumber() {
+        return errorFirstNumber;
+    }
+
+    public void setErrorFirstNumber(String errorFirstNumber) {
+        this.errorFirstNumber = errorFirstNumber;
+    }
+
+    public String getErrorSecoundNumber() {
+        return errorSecoundNumber;
+    }
+
+    public void setErrorSecoundNumber(String errorSecoundNumber) {
+        this.errorSecoundNumber = errorSecoundNumber;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String numberOne, String numberTwo) {
         BigDecimal numOne = validateNumber(numberOne, "firstNumber");
         BigDecimal numTwo = validateNumber(numberTwo, "secoundNumber");
         BigDecimal answerNum = numTwo.add(numOne);
-              
-        String answer = "Result: "+numOne+" + "+numTwo+" = "+answerNum;
         
-        return answer;
+        this.answer = "Result: "+numOne+" + "+numTwo+" = "+answerNum;
     }
     
     public BigDecimal validateNumber(String number, String error ){
@@ -31,20 +58,13 @@ public class SumModel {
         }
         catch(NumberFormatException e){
             if(error == "firstNumber"){
-                errorFirstNumber = number+" is not a number";
+                setErrorFirstNumber(number+" is not a number");
             }
             else if(error == "secoundNumber"){
-                errorSecoundNumber = number+" is not a number";
+                setErrorSecoundNumber(number+" is not a number");
             }
             result = new BigDecimal("0");
         }
         return result;
-    }
-    
-    public String getErrorFirstNumber(){
-        return errorFirstNumber;
-    }
-    public String getErrorSecoundNumber(){
-        return errorSecoundNumber;
     }
 }

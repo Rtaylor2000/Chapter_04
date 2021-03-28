@@ -1,0 +1,75 @@
+/* 
+    Created on : Mar 28, 2021, 1:36:59 AM
+    Author     : Ryan
+*/
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+body{
+    font-family: New Tegomin;
+    margin: 50px 0px;
+    background-color: hsl(125, 134%, 25%);
+}
+.containor{
+    text-align: center;
+    background-color: hsl(125, 134%, 15%);
+}
+h1{
+    color: hsl(225, 104%, 15%);
+}
+label, p{
+    display: block;
+    color:white;
+}
+input, textarea{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid whitesmoke;
+    background-color: hsl(125, 134%, 15%);
+    color: white;
+    font-weight: 500;
+}
+.error{
+    font-weight: bold;
+}
+input[type="submit"] {
+  background-color: #2221ff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 20px auto 0;
+  width: 25%;
+  border: 3px solid grey;
+  text-align: center;
+}
+input[type="submit"]:hover {
+  background-color: #1cba43;
+  border: 3px solid hsl(225, 16%, 95%);
+}
+
+@media only screen and (min-width: 768px){
+  .containor{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  form{
+    width: 460px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 10000px){
+  .containor{
+    width: 90%;
+    margin: 0 auto;
+  }
+  form{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
