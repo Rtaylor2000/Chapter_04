@@ -4,9 +4,6 @@
     Author     : Ryan
 --%>
 <%@page import="com.taylor.SumModel"%>
-<%
-    SumModel sumModel = (SumModel)request.getAttribute("sumModel");
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +17,7 @@
         <div class="containor">
         <h1>Basic Addition Servlet Assignment</h1>
         <p>Please enter two numbers and click the Submit button</p>
-        <form action="SumHandler" method="processRequest">
+        <form action="SumHandler" method="POST">
             <label for="firstNumber">First Number:</label>
             <input type="text" name="firstNumber" /> <span class="error" style="color:red;">${fn:escapeXml(sumModel["errorFirstNumber"])}</span>
             <br />

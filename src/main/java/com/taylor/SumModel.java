@@ -53,6 +53,9 @@ public class SumModel implements Serializable{
     
     public BigDecimal validateNumber(String number, String error ){
         BigDecimal result;
+        if(number == null || number.equals("")) {
+            number = "0";
+        }
         try{
             result = new BigDecimal(number);
         }

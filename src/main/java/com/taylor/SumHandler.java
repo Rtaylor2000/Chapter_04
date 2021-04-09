@@ -60,16 +60,16 @@ public class SumHandler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        SumModel model = new SumModel();
-//	String firstNumber = "";
-//        String secoundNumber = "";
-//        
-//        firstNumber = request.getParameter("firstNumber");
-//        secoundNumber = request.getParameter("secondNumber");
-//
-//        model.setAnswer(firstNumber, secoundNumber);
-//
-//        request.getRequestDispatcher("/AddTwo.jsp").forward(request, response);
+        SumModel sumModel = new SumModel();
+	String firstNumber = "";
+        String secoundNumber = "";
+        
+        firstNumber = request.getParameter("firstNumber");
+        secoundNumber = request.getParameter("secondNumber");
+        sumModel.setAnswer(firstNumber, secoundNumber);
+        
+        request.setAttribute("sumModel", sumModel);
+        request.getRequestDispatcher("/AddTwo.jsp").forward(request, response);
         processRequest(request, response);
     }
     
