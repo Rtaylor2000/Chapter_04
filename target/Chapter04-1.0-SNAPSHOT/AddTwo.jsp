@@ -28,13 +28,5 @@
         </form>
         <h3>${fn:escapeXml(sumModel["answer"])}</h3>
         </div>
-
-        <p>do it</p>
-        
-        <h3>creating a conflict</h3>
-        
     </body>
-    
-    <p>this will be changed</p>
-    
 </html>
